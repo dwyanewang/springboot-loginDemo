@@ -10,10 +10,6 @@ public interface RegisterService {
     
     public static final String BEAN_NAME = "registerService";
     
-
-    public Map<String,Object> regist(User user, String soeid) throws IOException;
-	
-	
     public User registNew(User regUser) throws ServiceException;
 
 }
