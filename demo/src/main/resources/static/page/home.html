@@ -1,0 +1,126 @@
+<div class="container contentBG">
+<!--  	<div class="row">
+	<pre>{{userRoles}}</pre>
+	</div> -->
+	<div class="row">
+        <div class="col-xs-12 col-sm-3" ui-view="userInfo"></div>
+
+		<div class="col-xs-12 col-sm-9">
+			<div class="carousel square-bullets" data-height="400"
+				data-role="carousel" data-direction="left">
+				<div class="slide">
+					<img src="../images/banner3.jpg" data-role="fitImage"
+						data-format="fill">
+				</div>
+				<div class="slide">
+					<img src="../images/banner4.jpg" data-role="fitImage"
+						data-format="fill">
+				</div>
+				<div class="slide">
+					<img src="../images/banner5.jpg" data-role="fitImage"
+						data-format="fill">
+				</div>
+			</div>
+			<div class="homeLfOne">
+				<h5 class="sepLine sepLine_1"></h5>
+				<h5 class="section-header latest">
+					<span class="section-name-container">
+						<h3 class="section-name">Account Summary</h3>
+					</span>
+				</h5>
+				<div class="row">
+				    <div class="col-xs-12" ng-if="errorData" ng-repeat="error in errorData | filter: {field : '_ErrorSummary'}">
+                        <div class="row alert alert-warning">{{ error.message }}</div>
+                    </div>
+					<div class="col-xs-12 col-sm-4">
+						<div class="oneContent">
+							<h1>Checking Account</h1>
+							<div class="thumbnail">
+								<img src="../images/card1.png">
+								<div class="caption">
+									<table class="table table-condensed table-responsive">
+										<tr>
+											<td>Name</td>
+											<td>{{accountSummary.accountSummaries.checkingAccountsSummary.checkingAccounts[0].accountDisplayName}}</td>
+										</tr>
+										<tr>
+											<td>Type</td>
+											<td>{{accountSummary.accountSummaries.checkingAccountsSummary.checkingAccounts[0].accountNickname}}</td>
+										</tr>
+										<tr>
+											<td>Balance</td>
+											<td>{{accountSummary.accountSummaries.checkingAccountsSummary.checkingAccounts[0].availableBalanceAmount.amount}}</td>
+										</tr>
+									</table>
+									<p class="">
+										<a ui-sref="app.checkingAccountDetail" class="btn btnStyle" role="button">
+										    Account Details&nbsp;&nbsp;<span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span>
+										</a>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-4">
+						<div class="oneContent">
+							<h1>Savings Account</h1>
+							<div class="thumbnail">
+								<img src="../images/card1.png">
+								<div class="caption">
+									<table class="table table-condensed table-responsive">
+										<tr>
+											<td>Name</td>
+											<td>{{accountSummary.accountSummaries.savingsAccountsSummary.savingsAccounts[0].accountDisplayName}}</td>
+										</tr>
+										<tr>
+											<td>Type</td>
+                                            <td>{{accountSummary.accountSummaries.savingsAccountsSummary.savingsAccounts[0].accountNickname}}</td>
+										</tr>
+										<tr>
+											<td>Balance</td>
+                                            <td>{{accountSummary.accountSummaries.savingsAccountsSummary.savingsAccounts[0].availableBalanceAmount.amount}}</td>
+										</tr>
+									</table>
+									<p class="">
+                                        <a ui-sref="app.savingsAccountDetail" class="btn btnStyle" role="button">
+                                            Account Details&nbsp;&nbsp;<span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span>
+                                        </a>
+                                    </p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-4">
+						<div class="oneContent">
+							<h1>CreditCard Account</h1>
+							<div class="thumbnail">
+								<img src="../images/card1.png">
+								<div class="caption">
+									<table class="table table-condensed table-responsive">
+										<tr>
+											<td>Name</td>
+											<td>{{accountSummary.accountSummaries.creditCardAccountsSummary.creditCardAccounts[0].accountDisplayName}}</td>
+										</tr>
+										<tr>
+											<td>Type</td>
+                                            <td>{{accountSummary.accountSummaries.creditCardAccountsSummary.creditCardAccounts[0].accountNickname}}</td>
+										</tr>
+										<tr>
+											<td>Balance</td>
+                                            <td>{{accountSummary.accountSummaries.creditCardAccountsSummary.creditCardAccounts[0].currentBalanceAmount.amount}}</td>
+										</tr>
+									</table>
+									<p class="">
+                                        <a ui-sref="app.creditAccountDetail" class="btn btnStyle" role="button">
+                                            Account Details&nbsp;&nbsp;<span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span>
+                                        </a>
+                                    </p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
