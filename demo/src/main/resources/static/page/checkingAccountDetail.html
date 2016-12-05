@@ -1,0 +1,117 @@
+<div class="container contentBG">
+	<div class="row">
+		<div class="col-xs-12 col-sm-3" ui-view="userInfo"></div>
+		<div class="col-xs-12 col-sm-9">
+			<div class="account-detail">
+				<h1>Checking Account Details</h1>
+				<!-- <div class="text-center">
+						<h1>
+							Account Detail&nbsp;<span class="red-dot"></span>
+						</h1>
+						<hr>
+					</div>
+ -->            
+                <div class="row">
+	                <div class="col-xs-12 alert alert-warning" ng-if="errorData" ng-repeat="error in errorData | filter: {field : '_ErrorSummary'}">
+	                    {{ error.message }}
+	                </div>
+                </div>
+                <div class="row">
+				<form class="form-horizontal" role="form">
+					<div class="form-group">
+						<label class="col-sm-4 control-label">AccountId</label>
+						<div class="col-sm-8">
+							<p class="form-control-static">{{accountDetails.accountId}}</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">AnnualPercentageYield</label>
+						<div class="col-sm-8">
+							<p class="form-control-static">{{accountDetails.annualPercentageYield}}</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">AvailableBalanceAmount</label>
+						<div class="col-sm-8">
+							<p class="form-control-static">{{accountDetails.availableBalanceAmount.amount}}</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">AvailableCreditAmount</label>
+						<div class="col-sm-8">
+							<p class="form-control-static">{{accountDetails.availableCreditAmount.amount}}</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">CurrentBalanceAmount</label>
+						<div class="col-sm-8">
+							<p class="form-control-static">{{accountDetails.currentBalanceAmount.amount}}</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">BalanceAsOfDate</label>
+						<div class="col-sm-8">
+							<p class="form-control-static">{{accountDetails.balanceAsOfDate}}</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">InterestPaidYearToDate</label>
+						<div class="col-sm-8">
+							<p class="form-control-static">{{accountDetails.interestPaidYearToDate.amount}}</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">InterestEarnedLastYear</label>
+						<div class="col-sm-8">
+							<p class="form-control-static">{{accountDetails.interestEarnedLastYear.amount}}</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">InterestRate</label>
+						<div class="col-sm-8">
+							<p class="form-control-static">{{accountDetails.interestRate}}&nbsp;&nbsp;%</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">UnsweptBalance</label>
+						<div class="col-sm-8">
+							<p class="form-control-static">{{accountDetails.unsweptBalance.amount}}</p>
+						</div>
+					</div>
+					<div class="form-group form-table">
+						<div class="col-sm-12">
+
+							<table class="table table-responsive">
+								<thead>
+									<tr>
+										<th>CheckNumber</th>
+										<th>Code</th>
+										<th>Amount</th>
+										<th>InitiationDate</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>{{accountDetails.checkingAccountTransactions.checkNumber}}</td>
+										<td>{{accountDetails.checkingAccountTransactions.transactionDescriptionCode}}</td>
+										<td>{{accountDetails.checkingAccountTransactions.transactionAmount.amount}}</td>
+										<td>{{accountDetails.checkingAccountTransactions.transactionInitiationDate}}</td>
+										<td>{{accountDetails.checkingAccountTransactions.transactionDescription}}</td>
+									</tr>
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</form>
+				<div class="form-group">
+					<div class="text-right">
+						<a type="submit" class="btn btnStyle btnBack" ui-sref="app.home">Back</a>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
