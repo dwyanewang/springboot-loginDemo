@@ -1,0 +1,111 @@
+<div class="container contentBG">
+	<div class="row">
+        <div class="col-xs-12 col-sm-3" ui-view="userInfo"></div>
+		<div class="col-xs-12 col-sm-9">
+			<div class="account-detail">
+				<h1>Savings Account Details</h1>
+				<!-- <div class="text-center">
+						<h1>
+							Account Detail&nbsp;<span class="red-dot"></span>
+						</h1>
+						<hr>
+					</div>
+ -->
+                <div class="row">
+                    <div class="col-xs-12 alert alert-warning" ng-if="errorData" ng-repeat="error in errorData | filter: {field : '_ErrorSummary'}">
+                        {{ error.message }}
+                    </div>
+                </div>
+                <div class="row">
+				<form class="form-horizontal" role="form">
+					<div class="form-group">
+						<label class="col-sm-4 control-label">AccountId</label>
+						<div class="col-sm-8">
+							<p class="form-control-static">{{accountDetails.accountId}}</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">AnnualPercentageYield</label>
+						<div class="col-sm-8">
+							<p class="form-control-static">{{accountDetails.annualPercentageYield.amount}}</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">AvailableBalanceAmount</label>
+						<div class="col-sm-8">
+							<p class="form-control-static">{{accountDetails.availableBalanceAmount.amount}}</p>
+						</div>
+					</div>
+					<div class="form-group">
+                        <label class="col-sm-4 control-label">InterestRate</label>
+                        <div class="col-sm-8">
+                            <p class="form-control-static">{{accountDetails.interestRate}}&nbsp;&nbsp;%</p>
+                        </div>
+                    </div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">InterestPaidYearToDate</label>
+						<div class="col-sm-8">
+							<p class="form-control-static">{{accountDetails.interestPaidYearToDate.amount}}</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">PrincipalAmount</label>
+						<div class="col-sm-8">
+							<p class="form-control-static">{{accountDetails.principalAmount.amount}}</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">MaturityValue</label>
+						<div class="col-sm-8">
+							<p class="form-control-static">{{accountDetails.maturityValue.amount}}</p>
+						</div>
+					</div>
+					<div class="form-group">
+                        <label class="col-sm-4 control-label">MaturityDate</label>
+                        <div class="col-sm-8">
+                            <p class="form-control-static">{{accountDetails.maturityDate}}</p>
+                        </div>
+                    </div>
+					<div class="form-group">
+						<label class="col-sm-4 control-label">ProductTerm</label>
+						<div class="col-sm-8">
+							<p class="form-control-static">{{accountDetails.productTerm}}</p>
+						</div>
+					</div>
+					<div class="form-group form-table">
+						<div class="col-sm-12">
+
+							<table class="table table-responsive">
+								<thead>
+									<tr>
+										<th>CheckNumber</th>
+										<th>Code</th>
+										<th>Amount</th>
+										<th>InitiationDate</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr ng-repeat="transaction in accountDetails.savingsAccountTransactions">
+										<td>{{transaction.checkNumber}}</td>
+										<td>{{transaction.transactionDescriptionCode}}</td>
+										<td>{{transaction.transactionAmount.amount}}</td>
+										<td>{{transaction.transactionInitiationDate}}</td>
+										<td>{{transaction.transactionDescription}}</td>
+									</tr>
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</form>
+				<div class="form-group">
+					<div class="text-right">
+						<a type="submit" class="btn btnStyle btnBack" ui-sref="app.home">Back</a>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
